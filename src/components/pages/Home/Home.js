@@ -3,9 +3,28 @@ import "./Home.css";
 import img from "./../../../assets/images/meditation.png";
 
 function Home() {
+  const program = [
+    {
+      name: "Calorie Intense Workout",
+      desc: "Here workout is given with consideration of your calorie intake and fitness goal",
+    },
+    {
+      name: "Diet Plan",
+      desc: "An achiveable diet plan is given for your fitness goal",
+    },
+    {
+      name: "One on One",
+      desc: "A mentor will be along in each of your fitness routine, to guide your through this journey towards healthy life",
+    },
+    {
+      name: "Nutrition Consulting",
+      desc: "You can get a specialized course of menu based on your needs and healthy goals from our nutritionist",
+    },
+  ];
   return (
     <div className="home-container container-sm">
       <div className="home-wrapper">
+        {/* Intro */}
         <div className="join-subscription">
           <div className="join-content">
             <div className="join-main-content">
@@ -34,6 +53,19 @@ function Home() {
             ></path>
           </svg>
         </div>
+
+        {/* Programs */}
+        <div className="programs-container">
+          {program.map(({ name, desc }, index) => (
+            <div key={index} className="program-content">
+              <h2>{name}</h2>
+              <p>{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Features */}
+        <div className="features-container"></div>
       </div>
     </div>
   );
